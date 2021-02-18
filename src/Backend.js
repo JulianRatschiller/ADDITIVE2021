@@ -57,16 +57,17 @@ return (
                     </div>
                     <div className="backend_qualities">
                         <div>{person.gender}</div>
-                        </div>
+                    </div>
+                    
                 </div>)}
         </div>
 
 
-
-        <div className="to_home"></div>
+        <div className="to_backend">
             <Link to="/">
                 <button>To Home</button>
             </Link>
+            </div>
         </div>    
     </>
 )

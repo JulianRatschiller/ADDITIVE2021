@@ -1,5 +1,6 @@
 .backend_site hr {
     width: 50%;
+    color: #66C39A;
 }
 
 .backend_header {
@@ -9,12 +10,6 @@
 }
 .backend_header h5 {
     align-self: center;
-}
-.to_home {
-    position: absolute;
-    right: 10%;
-    top: 10%;
-    color: #66C39A;
 }
 .backend_table {
     display: flex;
@@ -28,5 +23,5 @@
     margin: 12px 12px;
 }
 .backend_qualities {
-    margin: 20px 100px;
+    margin: 15px 200px;
 }
