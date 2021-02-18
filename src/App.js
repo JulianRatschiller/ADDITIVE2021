@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { Component } from 'react'
 import "./App.css"
+import Backend from './Backend'
+import { Link, BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 class App extends React.Component {
   constructor(props){ 
     super(props) 
+    
     this.state = { email:'',name:'', lastname:''} 
     this.handleChange = this.handleChange.bind(this) 
     this.handleSubmit = this.handleSubmit.bind(this) 
@@ -13,24 +16,56 @@ class App extends React.Component {
     const { email, name, lastname } = this.state 
     event.preventDefault() 
     alert(` 
+      The form was submitted successfully!
+
       ____Your Details____\n 
       Name : ${name} 
       Lastname: ${lastname}
-      Email : ${email} 
-    `) 
+      Email : ${email}
+    `)
+    
+    let url = 'https://api.sheety.co/f746d650958bef07d26c4dae368ca02f/trialDay/subscribers/';
+    let body = {
+      subscriber : {
+        firstname : name,
+        lastname : lastname,
+        email : email,
+        gender : "Male"
+      }
+    }
+    fetch(url, {
+      method: 'POST',
+      body: JSON.stringify(body),
+      headers: {
+        'Content-Type': 'application/json'
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+      },  
+    })
+    .then((response) => response.json())
+    .then(json => {
+      
+      console.log(json.user);
+    });
+
   } 
 
   handleChange(event){ 
     this.setState({ 
       [event.target.name] : event.target.value 
     }) 
-  } 
+  }
 
 
   render() {
     return (
-    <>
-    
+  <Router>
+    <Switch>
+
+    <Route path="/backend">
+      <Backend />
+    </Route>
+
+<Route path="/">
     <div className="wrapper wrapper_left">
       <hr className="line"></hr>&nbsp;
       <div className="subscribe_text">
@@ -38,7 +73,11 @@ class App extends React.Component {
       </div>
       </div>
       <div className="wrapper wrapper_right">
-     
+     <div className="to_backend">
+     <Link to="/backend">
+       <button>To Backend</button>
+       </Link>
+     </div>
       <div className="radio_buttons">
          <input className="radio_btn" type="radio" id="radio1" name="radios" required></input>
          <label htmlFor="radio1"> Male&nbsp;&nbsp;</label>
@@ -71,11 +110,11 @@ class App extends React.Component {
            </div>
            <div className="btn"><button type="submit" /*value={this.state.value}*/>Subscribe</button></div>     
        </div>
-       
      </form>
     </div>
-   
-</>
+    </Route>
+    </Switch>
+</Router>
     )
 }
 }

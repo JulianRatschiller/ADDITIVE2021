@@ -14,10 +14,10 @@ p {
     height: 100vh;
 }
 .wrapper > hr {
-    color: hsl(100, 95%, 80%);
+    color: #66C39A;
 }
 .wrapper strong {
-    color: hsl(100, 95%, 80%);
+    color: #66C39A;
 }
 .wrapper_left {
     display: table-cell;
@@ -35,31 +35,41 @@ p {
     font-size: 22px;
     font-weight: 200;
 }
-.input_box,
-.input_box:focus {
+.input_box {
     padding: 10px;
     border-top-style: hidden;
     border-right-style: hidden;
     border-left-style: hidden;
     border-bottom-style: groove;
+    
+    
     width: 50%;
     margin: 12px auto;
     outline: none;
 }
+.input_box:focus {
+    border-color: #66C39A;
+}
+.input_box:valid {
+    border-color: gray !important;
+}
+
+
+
 .checkbox {
     margin: 25px auto;
     color: gray;
     justify-content: center;
 }
 .checkbox input[type="checkbox"]:checked+label {
-    color: lightgreen;
+    color: #66C39A;
 }
 
 /* BUTTONS */
 
 .radio_btn {
     margin: 12px 12px;
-    background-color: lightgreen !important;
+    background-color: #66C39A !important;
 }
 .radio_buttons {
     color: gray;
@@ -73,16 +83,22 @@ p {
 
 .btn button{
     color: white;
-    background-color: lightgreen;
+    background-color: #66C39A;
     padding: 10px;
     border-radius: 10px;
     border-style: none;
-    border: 1px solid lightgreen;
+    border: 1px solid #66C39A;
     cursor: pointer;
 }
 .btn button:hover {
     background-color: white;
-    color: lightgreen;
+    color: #66C39A;
+}
+.to_backend {
+    position: absolute;
+    right: 10%;
+    top: 10%;
+    color: #66C39A;
 }
 
 /* Queries */
