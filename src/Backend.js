@@ -36,8 +36,8 @@ return (
         </div>
         <hr></hr>
         <div className="backend_table">
-            <h5>Full Name</h5>
-            <h5>Gender</h5>
+            <h5>Firstname</h5>
+            <h5>Lastname</h5>
             <h5>Email Address</h5>
             <h5>Gender</h5>
         </div>
