@@ -1,5 +1,32 @@
+.backend_site hr {
+    width: 50%;
+}
+
 .backend_header {
     display: flex;
     justify-content: space-between;
+    margin: 20px 20%;
+}
+.backend_header h5 {
+    align-self: center;
+}
+.to_home {
+    position: absolute;
+    right: 10%;
+    top: 10%;
+    color: #66C39A;
+}
+.backend_table {
+    display: flex;
+    justify-content: space-between;
     margin: auto 20%;
+}
+.backend_people {
+    margin: auto 20%;
+    display: flex;
+    justify-content: space-between;
+    margin: 12px 12px;
+}
+.backend_qualities {
+    margin: 20px 100px;
 }
